@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const getToken = () => window.localStorage.getItem('jwtToken_genie');
 axios.defaults.baseURL = 'https://andela-genie-backend.herokuapp.com/api/v1';
-const token  = getToken();
 
 axios.interceptors.request.use((config) => {
+  const getToken = () => window.localStorage.getItem('jwtToken_genie');
+  const token  = getToken();
     // Do something before request is sent
   return Object.assign({}, config, { headers: { Authorization: `bearer ${token}` } });
 }, (error) => {

@@ -7,10 +7,24 @@ class Login extends Component {
 
   componentWillMount = () => {
     const { location } = window;
+    window.localStorage.removeItem('jwtToken_genie');
     if (location.href.includes('token')) {
       const token  = location.search.split('=')[1];
-      window.localStorage.setItem('jwtToken_genie', token);
-      return this.props.history.push('/dashboard');
+
+      if (!token) {
+        return this.props.history.push('/');
+      }
+      else {
+        const token_fire = (async() => {
+          await window.localStorage.setItem('jwtToken_genie', token);
+          return window.localStorage.getItem('jwtToken_genie');
+        })();
+        token_fire.then(tokenConfirmed => {
+          if (tokenConfirmed) {
+            return this.props.history.push('/dashboard');
+          }
+        });
+      }
     }
     return this.props.history.push('/');
   }
@@ -27,7 +41,7 @@ class Login extends Component {
                   <h1>Andela Genie</h1>
                   <p>Sign in to access your account.</p>
                 </div>
-                <a className="google-btn-panel" href="https://api-prod.andela.com/login?redirect_url=https://andela-genie-frontend.herokuapp.com/">
+                <a className="google-btn-panel" href="https://api-prod.andela.com/login?redirect_url=http://localhost:3000/">
                   <img src={google_btn} className="Andela-App-logo" alt="andela-logo" />
                 </a>
               </div>

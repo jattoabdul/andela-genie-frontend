@@ -34,7 +34,7 @@ const requestReducer = (state = initialState, action) => {
         return {
           ...state,
           errorFetchingGuest: payload,
-          isFetchingGuest: false
+          isFetchingRequest: false
         }
 
       case UPDATE_REQUEST:
