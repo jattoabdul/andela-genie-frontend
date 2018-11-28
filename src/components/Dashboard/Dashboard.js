@@ -67,6 +67,7 @@ class Dashboard extends Component {
     updateRequestAction = () => {
         let { singleRequest: { id }, updateMsg, status } = this.state;
         this.props.handleUpdateRequest(id, status, updateMsg);
+        this.setState((state) => ({ ...state, updateMsg: '' }))
         this.toggle('');
     }
 

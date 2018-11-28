@@ -20,7 +20,7 @@ const UpdateRequestForm = (props) => {
                     type="textarea"
                     name="updateMsg"
                     id="exampleText"
-                    placeholder="Text Area"
+                    placeholder="Additional info - optional"
                     className="col-md-12"
                     rows="5"
                     value={props.requestMsg}
