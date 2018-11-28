@@ -1,7 +1,7 @@
 {
   "name": "andela-genie",
   "version": "0.1.0",
-  "homepage": "https://andela-genie.herokuapp.com/",
+  "homepage": "https://andela-genie-frontend.herokuapp.com/",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
