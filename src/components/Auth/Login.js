@@ -24,7 +24,7 @@ class Login extends Component {
               <div className="inner-login-panel">
                 <div className="login-content-panel">
                   <img src={andela_logo} className="App-logo" alt="logo" />
-                  <h1>Andela Guesty</h1>
+                  <h1>Andela Genie</h1>
                   <p>Sign in to access your account.</p>
                 </div>
                 <a className="google-btn-panel" href="https://api-prod.andela.com/login?redirect_url=https://andela-genie-frontend.herokuapp.com/">
